@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import EmployeeForm from './features/EmployeeForm/EmployeeForm';
+import EmployeeForm from './features/Employee/EmployeeForm';
 
 function App() {
   return (
