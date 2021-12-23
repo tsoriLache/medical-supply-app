@@ -1,19 +1,25 @@
 import React, { useState } from 'react'
 import { useAppDispatch } from '../../app/hooks';
 import {update} from './employeeSlice'
+const scrollToElement = require('scroll-to-element');
+
 
 
 
 export default function EmployeeForm() {
   // const employee = useSelector((state: RootState) => state.employee);
   const dispatch = useAppDispatch();
-  const [data, setData] = useState({name:'',phone:'',date:'',location:''})
+  const [data, setData] = useState({name:'',phone:'',date:new Date().toJSON().slice(0,10),location:''})
 
 const handleSubmit = (e:React.MouseEvent<HTMLElement>)=>{
-  e.preventDefault();
+  // e.preventDefault();
   dispatch(update(data))
-  setData({name:'',phone:'',date:'',location:''})
-}
+  setData({name:'',phone:'',date:new Date().toJSON().slice(0,10),location:''})
+  scrollToElement('#equipment-form', {
+    offset: 0,
+    ease:'out-circ',
+    duration: 500
+});}
 
     return (
         <div className="container">  
