@@ -7,7 +7,6 @@ const scrollToElement = require('scroll-to-element');
 
 
 export default function EmployeeForm() {
-  // const employee = useSelector((state: RootState) => state.employee);
   const dispatch = useAppDispatch();
   const [data, setData] = useState({name:'',phone:'',date:new Date().toJSON().slice(0,10),location:''})
 
