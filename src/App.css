@@ -163,7 +163,7 @@ fieldset {
   --title-font: 'Open Sans';
   --data-font: 'Lato';
   --white-bone: rgb(230, 230, 230);
-  --blue: rgba(63, 219, 42, 0.623);
+  --green: rgba(63, 219, 42, 0.623);
   --light-black: rgb(0 0 0 / 0.8);
   --transparent-black: rgb(0 0 0 / 0.2);
   --white: #fff;
@@ -205,7 +205,7 @@ fieldset {
 }
 
 .platform {
-  background: var(--blue);
+  background: var(--green);
   color: var(--white);
 }
 
@@ -240,7 +240,7 @@ fieldset {
 }
 
 .table__headers {
-  background-color: var(--blue);
+  background-color: var(--green);
 }
 
 .header {
