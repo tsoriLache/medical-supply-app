@@ -1,18 +1,18 @@
 import React from 'react'
 import Tr from './Tr'
-import { fullEquipmentList } from '../../db/db'
 import Li from './Li'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../app/store'
 
 export default function EquipmentForm() {
+    const equipmentList = useSelector((state: RootState) => state.equipment)
     const employeeName = useSelector((state: RootState) => state.employee.name)
     return (
         <div id='equipment-form'>
             <h1 className="page-title">Hey {employeeName} Please Fill Out the Equipment List:</h1>
 
 <ul className="conversion-rate-list">
-{fullEquipmentList.map(({id,item,required})=><Li key={id} data={{id,item,required}}/>)}  
+{equipmentList.map(({id,item,required})=><Li key={id} data={{id,item,required}}/>)}  
 </ul>
 
 <div className="wrap">
@@ -28,7 +28,7 @@ export default function EquipmentForm() {
     </thead>
 
     <tbody className="table__content">
-        {fullEquipmentList.map(({id,item,required})=><Tr key={id} data={{id,item,required}}/>)}
+        {equipmentList.map(({id,item,required})=><Tr key={id} data={{id,item,required}}/>)}
     </tbody>
   </table>
 </div>
