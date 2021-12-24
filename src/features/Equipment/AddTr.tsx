@@ -1,13 +1,12 @@
+import { nanoid } from 'nanoid';
 import React,{useState} from 'react'
-import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../../app/hooks';
-import { RootState } from '../../app/store';
 import {add_equipment} from './equipmentSlice'
 
 export default function AddTr() {
     const dispatch = useAppDispatch();
-    const id = useSelector((state: RootState) => state.equipment).length+1;
-    const [newEquip, setNewEquip] = useState({id,item:'',required:1,current:0,diff:NaN})
+    const id = nanoid();//TODO check id error
+    const [newEquip, setNewEquip] = useState({id,item:'',required:1,current:0,diff:NaN,extra:true})
     const {required,current} = newEquip;//TODO check if it reanders every time - possible bug;
     
     const preventAdd = ()=>{
@@ -24,11 +23,10 @@ export default function AddTr() {
     }
     
     const handleAdd=()=>{
-        if(preventSubmit())console.log('missing data')//TODO notify
         if(preventAdd())console.log('missing data')//TODO notify
         else{
             dispatch(add_equipment({newEquip}))
-            setNewEquip({id,item:'',required:1,current:0,diff:NaN})
+            setNewEquip({id,item:'',required:1,current:0,diff:NaN,extra:true})
         }
     }
     
