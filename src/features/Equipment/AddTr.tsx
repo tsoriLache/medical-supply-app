@@ -9,7 +9,12 @@ export default function AddTr() {
     const id = useSelector((state: RootState) => state.equipment).length+1;
     const [newEquip, setNewEquip] = useState({id,item:'',required:1,current:0,diff:NaN})
     const {required,current} = newEquip;//TODO check if it reanders every time - possible bug;
-
+    
+    const preventSubmit = ()=>{
+        const {id,item} = newEquip;
+        return id&&item? false:true;
+    }
+    
     const handleChange = ({target}:{target:HTMLInputElement},field:string)=>{
         if(field==='required'||field==='current'){
             setNewEquip((prev)=>({...prev,[field]:Number(target.value),diff:newEquip.current-newEquip.required}))
@@ -19,10 +24,13 @@ export default function AddTr() {
     }
     
     const handleAdd=()=>{
-        dispatch(add_equipment({newEquip}))
-        setNewEquip({id,item:'',required:1,current:0,diff:NaN})
+        if(preventSubmit())console.log('missing data')//TODO notify
+        else{
+            dispatch(add_equipment({newEquip}))
+            setNewEquip({id,item:'',required:1,current:0,diff:NaN})
+        }
     }
-
+    
     return (
         <tr className="table__row">
         <td className="row__cell"><button onClick={()=>{handleAdd()}}>➕</button></td>
@@ -33,3 +41,4 @@ export default function AddTr() {
       </tr>
     )
 }
+

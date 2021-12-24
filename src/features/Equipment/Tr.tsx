@@ -3,6 +3,7 @@ import React,{useState} from 'react'
 export default function Tr({data}:{data:{id:number,item:string,required:number,current:number|undefined}}) {
     const [current, setCurrent] = useState(data.current?data.current:0)
     const {id,item,required} = data;
+    
     return (
         <tr className="table__row">
         <td className="row__cell">{id}</td>

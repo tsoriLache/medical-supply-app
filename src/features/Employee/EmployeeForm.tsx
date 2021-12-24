@@ -5,46 +5,54 @@ const scrollToElement = require('scroll-to-element');
 
 
 
-
 export default function EmployeeForm() {
   const dispatch = useAppDispatch();
   const [data, setData] = useState({name:'',phone:'',date:new Date().toJSON().slice(0,10),location:''})
+  
+  const preventSubmit = ()=>{
+    const {name,location} = data;
+    return name&&location? false:true;
+  }
 
-const handleSubmit = (e:React.MouseEvent<HTMLElement>)=>{
-  // e.preventDefault();
-  dispatch(update(data))
-  setData({name:'',phone:'',date:new Date().toJSON().slice(0,10),location:''})
-  scrollToElement('#equipment-form', {
-    offset: 0,
-    ease:'out-circ',
-    duration: 500
-});}
+  const handleChange=(value:string,field:string)=>{
+    setData((prev)=>({...prev,[field]:value}))
+  }
 
-    return (
-        <div className="container">  
-  <form id="contact" action="" method="post">
-    <h3>Employee Information Form</h3>
-    <h4>HAVEANICEDAY🧊</h4>
-    <fieldset>
-      <input value={data.name} placeholder="Full name" type="text" onChange={({target})=>setData((prev)=>({...prev,name:target.value}))} required />
-    </fieldset>
-    <fieldset>
-        {/* TODO consider https://www.w3schools.com/html/html5_geolocation.asp */}
-      <input value={data.location} placeholder="Location" type="text" onChange={({target})=>setData((prev)=>({...prev,location:target.value}))} required/>
-    </fieldset>
-    <fieldset>
-      <input value={data.phone} placeholder="Your Phone Number (optional)" type="tel" onChange={({target})=>setData((prev)=>({...prev,phone:target.value}))} />
-    </fieldset>
-    <fieldset>
-      <input value={data.date} placeholder="Date" type="date" onChange={({target})=>setData((prev)=>({...prev,date:target.value}))} required/>
-    </fieldset>
-    <fieldset>
-      <textarea placeholder="Anything Else...." ></textarea>
-    </fieldset>
-    <fieldset>
-      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" onClick={(e)=>{handleSubmit(e)}}>Submit</button>
-    </fieldset>
-  </form>
-</div>
-    )
+  const handleSubmit = (e:React.MouseEvent<HTMLElement>)=>{
+    // e.preventDefault();
+    if(preventSubmit())console.log('missing data')//TODO notify
+    else{
+      dispatch(update(data))
+      setData({name:'',phone:'',date:new Date().toJSON().slice(0,10),location:''})
+      scrollToElement('#equipment-form', {offset: 0,ease:'out-circ',duration: 500 })
+      }
+    }
+
+  return (
+    <div className="container">  
+      <form id="contact" action="" method="post">
+        <h3>Employee Information Form</h3>
+        <h4>HAVEANICEDAY🧊</h4>
+        <fieldset>
+          <input value={data.name} placeholder="Full name" type="text" onChange={({target})=>handleChange(target.value,'name')} required />
+        </fieldset>
+        <fieldset>
+            {/* TODO consider https://www.w3schools.com/html/html5_geolocation.asp */}
+          <input value={data.location} placeholder="Location" type="text" onChange={({target})=>handleChange(target.value,'location')} required/>
+        </fieldset>
+        <fieldset>
+          <input value={data.phone} placeholder="Your Phone Number (optional)" type="tel" onChange={({target})=>handleChange(target.value,'phone')} />
+        </fieldset>
+        <fieldset>
+          <input value={data.date} placeholder="Date" type="date" onChange={({target})=>handleChange(target.value,'date')} required/>
+        </fieldset>
+        <fieldset>
+          <textarea placeholder="Anything Else...." ></textarea>
+        </fieldset>
+        <fieldset>
+          <button name="submit" type="submit" id="contact-submit" data-submit="...Sending" onClick={(e)=>{handleSubmit(e)}}>Submit</button>
+        </fieldset>
+      </form>
+    </div>
+  )
 }
