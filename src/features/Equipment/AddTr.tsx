@@ -37,7 +37,7 @@ export default function AddTr() {
         <td className="row__cell"><input value={newEquip.required} onChange={(e)=>handleChange(e,'required')} type="number"/></td>
         <td className="row__cell"><input value={newEquip.current} onChange={(e)=>handleChange(e,'current')} type="number"/></td>
         <td className="row__cell">{isNaN(current-required)?'':current-required}</td>
-      </tr>
+        </tr>
     )
 }
 

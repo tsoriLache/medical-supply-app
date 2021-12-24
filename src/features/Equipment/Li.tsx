@@ -1,11 +1,20 @@
 import React, { useState } from 'react'
+import { useAppDispatch } from '../../app/hooks';
+import { remove_equipment } from './equipmentSlice';
 
-export default function Li({data}:{data:{id:string,item:string,required:number,current:number|undefined}}) {
-    const [current, setCurrent] = useState(data.current?data.current:0)
-    const {id,item,required} = data;
+export default function Li({data,i}:{data:{id:string,item:string,required:number,current:number|undefined,extra:boolean},i:number}) {
+  const dispatch = useAppDispatch();  
+  const [current, setCurrent] = useState(data.current?data.current:0)
+    const {id,item,required,extra} = data;
+    
+    const handleDelete = (id:string)=>{
+      dispatch(remove_equipment({id}))
+    }
+
     return (
         <li className="list-item" >
-    <h2 className="platform">#{id} - {item}</h2>
+              {extra?<button onClick={()=>{handleDelete(id)}}>❌</button>:''}
+    <h2 className="platform">#{i} - {item}</h2>
     
     <dl className="ad">
       <dt className="name">Required :</dt>

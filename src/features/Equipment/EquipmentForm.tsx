@@ -14,7 +14,7 @@ export default function EquipmentForm() {
             <h1 className="page-title">Hey {employeeName} Please Fill Out the Equipment List:</h1>
             {/* optional view list/table css by width */}
             <ul className="conversion-rate-list">
-            {equipmentList.map(({id,item,required,current})=><Li key={id} data={{id,item,required,current}}/>)}  
+            {equipmentList.map(({id,item,required,current,extra},i)=><Li key={id} i={i} data={{id,item,required,current,extra}}/>)}  
             <AddLi/>
             </ul>
             <div className="wrap">
@@ -30,7 +30,7 @@ export default function EquipmentForm() {
                 </thead>
                 <tbody className="table__content">
                     {equipmentList.map(({id,item,required,current,extra},i)=><Tr key={id} i={i} data={{id,item,required,current,extra}}/>)}
-                    <AddTr/>
+                    <AddTr />
                 </tbody>
               </table>
             </div>

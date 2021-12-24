@@ -8,7 +8,7 @@ export default function AddLi() {
     
     const dispatch = useAppDispatch();
     const id = useSelector((state: RootState) => state.equipment).length+1;
-    const [newEquip, setNewEquip] = useState({id,item:'',required:1,current:0,diff:NaN})
+    const [newEquip, setNewEquip] = useState({id,item:'',required:1,current:0,diff:NaN,extra:true})
     const {required,current} = newEquip;//TODO check if it reanders every time - possible bug;
 
     const preventAdd = ()=>{
@@ -28,7 +28,7 @@ export default function AddLi() {
         if(preventAdd())console.log('missing data')//TODO notify
         else{
             dispatch(add_equipment({newEquip}))
-            setNewEquip({id,item:'',required:1,current:0,diff:NaN})
+            setNewEquip({id,item:'',required:1,current:0,diff:NaN,extra:true})
         }
     }
 
