@@ -11,7 +11,7 @@ export default function AddLi() {
     const [newEquip, setNewEquip] = useState({id,item:'',required:1,current:0,diff:NaN})
     const {required,current} = newEquip;//TODO check if it reanders every time - possible bug;
 
-    const preventSubmit = ()=>{
+    const preventAdd = ()=>{
         const {id,item} = newEquip;
         return id&&item? false:true;
     }
@@ -25,7 +25,7 @@ export default function AddLi() {
     }
     
     const handleAdd=()=>{
-        if(preventSubmit())console.log('missing data')//TODO notify
+        if(preventAdd())console.log('missing data')//TODO notify
         else{
             dispatch(add_equipment({newEquip}))
             setNewEquip({id,item:'',required:1,current:0,diff:NaN})
