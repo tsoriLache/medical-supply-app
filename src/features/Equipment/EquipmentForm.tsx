@@ -29,7 +29,7 @@ export default function EquipmentForm() {
                   </tr>
                 </thead>
                 <tbody className="table__content">
-                    {equipmentList.map(({id,item,required,current})=><Tr key={id} data={{id,item,required,current}}/>)}
+                    {equipmentList.map(({id,item,required,current,extra},i)=><Tr key={id} i={i} data={{id,item,required,current,extra}}/>)}
                     <AddTr/>
                 </tbody>
               </table>
