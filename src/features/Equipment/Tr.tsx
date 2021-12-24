@@ -13,4 +13,5 @@ export default function Tr({data}:{data:{id:number,item:string,required:number,c
         <td className="row__cell">{current-required}</td>
       </tr>
     )
+export default function Tr({data,i}:{data:{id:string,item:string,required:number,current:number|undefined,extra:boolean},i:number}) {
 }

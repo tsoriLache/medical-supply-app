@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function Li({data}:{data:{id:number,item:string,required:number,current:number|undefined}}) {
+export default function Li({data}:{data:{id:string,item:string,required:number,current:number|undefined}}) {
     const [current, setCurrent] = useState(data.current?data.current:0)
     const {id,item,required} = data;
     return (

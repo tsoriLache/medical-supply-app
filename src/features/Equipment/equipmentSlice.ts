@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import { fullEquipmentList } from '../../db/db'
 
 interface EquipmentState {
-  id:number;
+  id:string;
   item:string;
   required:number;
   current?:number;
