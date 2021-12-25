@@ -1,0 +1,305 @@
+body {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 30px;
+  color: #777;
+  background: #4caf50;
+}
+.App {
+  text-align: center;
+}
+
+.send-btn {
+  cursor: pointer;
+  width: fit-content;
+  border-width: 0.5vh;
+  border-color: rgb(255, 255, 255);
+  background: #4caf50;
+  color: #fff;
+  margin: 0px 5vh 5vh;
+  padding: 2vh;
+  font-size: 3vh;
+}
+
+/* ________________________EMPLOYEE FORM__________________________________________ */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+#contact input[type='text'],
+#contact input[type='email'],
+#contact input[type='tel'],
+#contact input[type='url'],
+#contact textarea,
+#contact button[type='submit'] {
+  font: 400 12px/16px 'Roboto', Helvetica, Arial, sans-serif;
+}
+
+#contact {
+  background: #f9f9f9;
+  padding: 25px;
+  margin: 150px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#contact h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+#contact h4 {
+  margin: 5px 0 15px;
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#contact input[type='text'],
+#contact input[type='email'],
+#contact input[type='tel'],
+#contact input[type='url'],
+#contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+#contact input[type='text']:hover,
+#contact input[type='email']:hover,
+#contact input[type='tel']:hover,
+#contact input[type='url']:hover,
+#contact textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+#contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+#contact button[type='submit'] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #4caf50;
+  color: #fff;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+#contact button[type='submit']:hover {
+  background: #43a047;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#contact button[type='submit']:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.copyright {
+  text-align: center;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
+}
+
+/* ______________________________EQUIPMENT TABLE__________________________________________ */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:wght@500;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --title-font: 'Open Sans';
+  --data-font: 'Lato';
+  --white-bone: rgb(230, 230, 230);
+  --green: rgba(63, 219, 42, 0.623);
+  --light-black: rgb(0 0 0 / 0.8);
+  --transparent-black: rgb(0 0 0 / 0.2);
+  --white: #fff;
+  --light-gray: rgb(200, 200, 200, 0.7);
+}
+
+.page-title {
+  margin: 15px 0;
+  padding: 0 0.5em;
+
+  font-family: var(--title-font);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 4vw, 3.2rem);
+  text-align: center;
+
+  color: var(--light-black);
+}
+
+/*---------------------Conversion Rate List----------------------*/
+.conversion-rate-list {
+  width: 80%;
+  margin: 25px auto;
+
+  text-align: center;
+
+  list-style: none;
+}
+
+.list-item {
+  padding-bottom: 2.5em;
+
+  border-radius: 6px;
+  box-shadow: 1px 1px 16px var(--transparent-black);
+  overflow: hidden;
+}
+
+.list-item + .list-item {
+  margin-top: 10px;
+}
+
+.platform {
+  background: var(--green);
+  color: var(--white);
+}
+
+.name,
+.platform {
+  font-family: var(--title-font), sans-serif;
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 2;
+}
+
+.value {
+  line-height: 1.5;
+  font-family: var(--data-font), sans-serif;
+  font-size: 2rem;
+
+  color: var(--light-black);
+}
+/*-----------------------------Conversion Rate Table---------------------------*/
+.conversion-rate-table {
+  flex-basis: min(80%, 900px);
+
+  display: none;
+
+  padding-bottom: 1em;
+
+  background-color: var(--white-bone);
+  border-radius: 6px;
+  border-collapse: collapse;
+  box-shadow: 1px 1px 16px var(--transparent-black);
+  overflow: hidden;
+}
+
+.table__headers {
+  background-color: var(--green);
+}
+
+.header {
+  padding: 0.25em 0;
+
+  font-family: var(--title-font), sans-serif;
+  font-size: 2.4rem;
+  font-weight: 500;
+
+  color: var(--white);
+}
+
+.table__row:nth-child(odd) {
+  background-color: var(--white);
+}
+
+.row__cell {
+  padding: 0.25em 0;
+
+  font-family: var(--data-font), sans-serif;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.row__cell + .row__cell,
+.header + .header {
+  border-left: 1px solid var(--light-gray);
+}
+
+@media (min-width: 600px) {
+  .conversion-rate-list {
+    display: none;
+  }
+
+  .conversion-rate-table {
+    display: table;
+  }
+
+  .wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 80vh;
+  }
+}
+/* -------------- */
+.ad {
+  background-color: rgba(66, 233, 135, 0.671);
+}
