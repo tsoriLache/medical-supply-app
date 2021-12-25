@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import { isUndefined } from 'util';
 import { useAppDispatch } from '../../app/hooks';
 import { RootState } from '../../app/store';
 import { remove_equipment, update_current } from './equipmentSlice';
