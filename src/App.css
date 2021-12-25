@@ -10,6 +10,18 @@ body {
   text-align: center;
 }
 
+.send-btn {
+  cursor: pointer;
+  width: fit-content;
+  border-width: 0.5vh;
+  border-color: rgb(255, 255, 255);
+  background: #4caf50;
+  color: #fff;
+  margin: 0px 5vh 5vh;
+  padding: 2vh;
+  font-size: 3vh;
+}
+
 /* ________________________EMPLOYEE FORM__________________________________________ */
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
