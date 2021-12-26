@@ -1,7 +1,9 @@
 import { nanoid } from 'nanoid';
 import React,{useState} from 'react'
 import { useAppDispatch } from '../../app/hooks';
-import {add_equipment} from './equipmentSlice'
+import {add_equipment} from './equipmentSlice';
+import ErrorMsg from '../../ErrorMsg';
+import { Icon } from 'semantic-ui-react';
 
 export default function AddTr() {
     const dispatch = useAppDispatch();
@@ -23,7 +25,7 @@ export default function AddTr() {
     }
     
     const handleAdd=()=>{
-        if(preventAdd())console.log('missing data')//TODO notify
+        if(preventAdd()) ErrorMsg('missing item name..')
         else{
             dispatch(add_equipment({newEquip}))
             setNewEquip({id,item:'',required:1,current:0,diff:NaN,extra:true})
@@ -32,7 +34,7 @@ export default function AddTr() {
     
     return (
         <tr className="table__row">
-        <td className="row__cell"><button onClick={()=>{handleAdd()}}>➕</button></td>
+        <td className="row__cell"><button className='add-btn' onClick={()=>{handleAdd()}}><Icon name='add'/></button></td>
         <td className="row__cell"><input value={newEquip.item} onChange={(e)=>handleChange(e,'item')} type="text"/></td>
         <td className="row__cell"><input value={newEquip.required} onChange={(e)=>handleChange(e,'required')} type="number"/></td>
         <td className="row__cell"><input value={newEquip.current} onChange={(e)=>handleChange(e,'current')} type="number"/></td>

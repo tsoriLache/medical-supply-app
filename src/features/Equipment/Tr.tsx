@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../../app/hooks';
 import { RootState } from '../../app/store';
+import DeleteBtn from './DeleteBtn';
 import { remove_equipment, update_current } from './equipmentSlice';
 
 export default function Tr({data,i}:{data:{id:string,item:string,required:number,current:number|undefined,extra:boolean},i:number}) {
@@ -23,8 +24,9 @@ export default function Tr({data,i}:{data:{id:string,item:string,required:number
   return (
     <tr className="table__row">
     <td className="row__cell">
-    {extra?<button onClick={()=>{handleDelete(id)}}>❌</button>:''}
-    {i+1}
+    {extra?<DeleteBtn onCLick={()=>{handleDelete(id)}}  index={i+1}/>:i+1}
+    {/* {extra?<button onClick={()=>{handleDelete(id)}}>❌</button>:''} */}
+    {/* {i+1} */}
     </td>
     <td className="row__cell">{item}</td>
     <td className="row__cell">{required}</td>

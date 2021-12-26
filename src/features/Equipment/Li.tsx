@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useAppDispatch } from '../../app/hooks';
+import DeleteBtn from './DeleteBtn';
 import { remove_equipment } from './equipmentSlice';
 
 export default function Li({data,i}:{data:{id:string,item:string,required:number,current:number|undefined,extra:boolean},i:number}) {
@@ -13,8 +14,8 @@ export default function Li({data,i}:{data:{id:string,item:string,required:number
 
     return (
         <li className="list-item" >
-              {extra?<button onClick={()=>{handleDelete(id)}}>❌</button>:''}
-    <h2 className="platform">#{i} - {item}</h2>
+              
+    <h2 className="platform">{extra?<DeleteBtn onCLick={()=>{handleDelete(id)}}  index={i+1}/>:`${i+1} - `} {item}</h2>
     
     <dl className="ad">
       <dt className="name">Required :</dt>

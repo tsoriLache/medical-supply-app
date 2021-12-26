@@ -14,12 +14,17 @@ body {
   cursor: pointer;
   width: fit-content;
   border-width: 0.5vh;
-  border-color: rgb(255, 255, 255);
-  background: #4caf50;
-  color: #fff;
+  border-color: #fff;
+  background: #fff;
+  color: #4caf50;
   margin: 0px 5vh 5vh;
-  padding: 2vh;
+  padding: 0.5vh;
   font-size: 3vh;
+}
+
+.add-btn {
+  border: none;
+  background-color: transparent;
 }
 
 /* ________________________EMPLOYEE FORM__________________________________________ */
@@ -39,9 +44,10 @@ body {
 }
 
 .container {
-  max-width: 400px;
-  width: 100%;
+  margin-left: 5%;
   margin: 0 auto;
+  max-width: 400px;
+  width: 90%;
   position: relative;
 }
 
@@ -295,8 +301,8 @@ fieldset {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    min-height: 80vh;
+    /* min-height: 65vh; */
+    margin-bottom: 2%;
   }
 }
 /* -------------- */

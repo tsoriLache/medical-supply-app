@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useAppDispatch } from '../../app/hooks';
+import ErrorMsg from '../../ErrorMsg';
 import {update} from './employeeSlice'
 const scrollToElement = require('scroll-to-element');
 
@@ -20,7 +21,7 @@ export default function EmployeeForm() {
 
   const handleSubmit = (e:React.MouseEvent<HTMLElement>)=>{
     // e.preventDefault();
-    if(preventSubmit())console.log('missing data')//TODO notify
+    if(preventSubmit())ErrorMsg('please fill all required fields..')
     else{
       dispatch(update(data))
       setData({name:'',phone:'',date:new Date().toJSON().slice(0,10),location:''})

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../../app/hooks';
 import { RootState } from '../../app/store';
+import ErrorMsg from '../../ErrorMsg';
 import { add_equipment } from './equipmentSlice';
 
 export default function AddLi() {
@@ -25,7 +26,7 @@ export default function AddLi() {
     }
     
     const handleAdd=()=>{
-        if(preventAdd())console.log('missing data')//TODO notify
+        if(preventAdd())ErrorMsg('missing item name..')
         else{
             dispatch(add_equipment({newEquip}))
             setNewEquip({id,item:'',required:1,current:0,diff:NaN,extra:true})
