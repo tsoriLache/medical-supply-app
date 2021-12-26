@@ -10,7 +10,6 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div className="App">
-      <h1>time to update</h1>
       <EmployeeForm/>
       <EquipmentForm/>
       <SendBtn/>
